@@ -20,12 +20,15 @@ console.log(caculator.tinhtong(7,8));
 console.log(caculator.tinhtong2());
 console.log(caculator.tinhhieu());
 class Khonggian extends Caculator{
-    constructor(cao = 5){
-        super(35,20)
+    constructor(dai =1,rong=1,cao = 5){
+        super(dai,rong)
         this.height = cao
     }
     thetich = ()=>{
         return this.tich(10,5)*this.height
+    }
+    thetich2 = ()=>{
+        return this.no1*this.no2*this.height
     }
 }
 
@@ -33,3 +36,5 @@ const khongian = new Khonggian()
 console.log(`khonggian`,khongian.tinhtong(10,30));
 console.log(`Thể tích`,khongian.tich(10,5)*khongian.height);
 console.log(`Thể tích với hàm`,khongian.thetich());
+const khongian2 = new Khonggian(30,2,10)
+console.log(`The tich 2 là: ${khongian2.thetich2()}`);
