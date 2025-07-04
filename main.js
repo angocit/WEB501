@@ -172,12 +172,32 @@
 // async function getData(){
 
 // }
-const getData = async ()=>{
-    try {
-        const response = await fetch("https://dummyjson.com/products")
-        const product = await response.json()
-        console.log(product);
+// const getData = async ()=>{
+//     try {
+//         const response = await fetch("https://dummyjson.com/products")
+//         const product = await response.json()
+//         console.log(product);
         
+//     } catch (error) {
+        
+//     }
+// }
+// getData()
+const response = axios.get(`https://dummyjson.com/products`)
+// console.log(response);
+response.then(value=>{
+    // console.log(value.data);
+    const {data} = value
+    // console.log(data);
+    const {products} = data
+    console.log('Promise',products);
+    
+})
+const getData = async()=>{
+    try {
+        const {data} = await axios.get('https://dummyjson.com/products')
+        const {products} = data
+        console.log('Hàm bất đồng bộ',products);
     } catch (error) {
         
     }
