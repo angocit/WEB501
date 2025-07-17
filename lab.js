@@ -45,39 +45,40 @@ const DisPlayStudent = (studentsarr)=>{
     })
     tbody.innerHTML = tr
 }
-DisPlayStudent(students)
-const formdata = document.getElementById("formdata")
-formdata.addEventListener("submit",(e)=>{
-    e.preventDefault() // Ngăn trình duyệt chuyển hướng
-    const name = document.querySelector("input[name=name]").value
-    const age = document.querySelector("input[name=age]").value
-    const address = document.querySelector("input[name=address]").value
-    const id = students.length+1
-    const newstudent = {id,name,age,address}
-    students = [...students,newstudent]
-    DisPlayStudent(students)
-})
-API_URL = 'https://fakestoreapi.com/products'
-const DisPlayProduct = async(url)=>{
-    const tbody = document.querySelector("#product tbody")
-    try {
-        const response = await fetch(url)
-        const products = await response.json()
-        let tr = ''
-    products.forEach((productitem,index)=>{
-        const {title,image,price,category} = productitem
-        tr+=`<tr>
-            <td>${index+1}</td>
-            <td>${title}</td>
-            <td>${image}</td>
-            <td>${price}</td>
-            <td>${category}</td>
-        </tr>`
-    })
-    tbody.innerHTML = tr
-    } catch (error) {
+// DisPlayStudent(students)
+// const formdata = document.getElementById("formdata")
+// formdata.addEventListener("submit",(e)=>{
+//     e.preventDefault() // Ngăn trình duyệt chuyển hướng
+//     const name = document.querySelector("input[name=name]").value
+//     const age = document.querySelector("input[name=age]").value
+//     const address = document.querySelector("input[name=address]").value
+//     const id = students.length+1
+//     const newstudent = {id,name,age,address}
+//     students = [...students,newstudent]
+//     DisPlayStudent(students)
+// })
+// API_URL = 'https://fakestoreapi.com/products'
+// const DisPlayProduct = async(url)=>{
+//     const tbody = document.querySelector("#product tbody")
+//     try {
+//         const response = await fetch(url)
+//         const products = await response.json()
+//         let tr = ''
+//     products.forEach((productitem,index)=>{
+//         const {title,image,price,category} = productitem
+//         tr+=`<tr>
+//             <td>${index+1}</td>
+//             <td>${title}</td>
+//             <td>${image}</td>
+//             <td>${price}</td>
+//             <td>${category}</td>
+//         </tr>`
+//     })
+//     tbody.innerHTML = tr
+//     } catch (error) {
         
-    }
+//     }
     
-}
-DisPlayProduct(API_URL)
+// }
+// DisPlayProduct(API_URL)
+ export {students,DisPlayStudent}
