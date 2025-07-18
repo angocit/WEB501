@@ -1,0 +1,1 @@
+export const TinhTong = (a,b)=>a+b
