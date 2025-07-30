@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "name": "Sản phẩm a",
+      "price": "10000",
+      "image": "dsafasdfadsf",
+      "id": 1
+    },
+    {
+      "name": "Sản phẩm b",
+      "price": "30000",
+      "image": "sdafasdfas",
+      "id": 2
+    },
+    {
+      "name": "Sản phẩm c",
+      "price": "50000",
+      "image": "sdfdsafads",
+      "id": 3
+    },
+    {
+      "name": "Sản phẩm 6",
+      "price": "60000",
+      "image": "sbdhfadsfhg",
+      "id": 6
+    }
+  ],
+  "users": []
+}

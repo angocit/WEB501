@@ -1,0 +1,1 @@
+export const hieu = (a,b)=>a-b
