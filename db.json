@@ -1,0 +1,49 @@
+{
+  "category": [
+    {
+      "id": 1,
+      "name": "Điện thoại"
+    },
+    {
+      "id": 1,
+      "name": "Máy tính bảng"
+    },
+    {
+      "name": "Danh mục mới",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "name": "Sản phẩm a 2323 232323",
+      "price": "10000",
+      "image": "dsafasdfadsf",
+      "id": 1
+    },
+    {
+      "name": "Sản phẩm b",
+      "price": "80000",
+      "image": "111111",
+      "id": 2
+    },
+    {
+      "name": "Sản phẩm c",
+      "price": "50000",
+      "image": "sdfdsafads",
+      "id": 3
+    },
+    {
+      "name": "Sản phẩm 6",
+      "price": "60000",
+      "image": "sbdhfadsfhg",
+      "id": 6
+    }
+  ],
+  "users": [
+    {
+      "email": "angoc@gmail.com",
+      "password": "$2a$10$AyoKV7rzSS.9vBINUIEdzOQF5eizp6rcaRKhYvTxqN4CEIQWPIg/K",
+      "id": 1
+    }
+  ]
+}
