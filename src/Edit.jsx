@@ -1,22 +1,17 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
+import CRUD from './services/crud'
 
 const Edit = () => {
     const [books,setBook] = useState({})
     // Lấy id từ url
     const {id} = useParams()
     const navigate = useNavigate()
+    const bookservice = new CRUD('books')
     useEffect(()=>{
-        const getBookById = async()=>{
-            try {
-                const {data} = await axios.get(`http://localhost:3000/books/${id}`)
-                setBook(data)
-            } catch (error) {
-                console.log(error);                
-            }
-        }
-        getBookById()
+       bookservice.GetById(id,setBook)
+    //    
     },[])
     const onSubmit = async (e)=>{
         e.preventDefault() // Ngăn trình duyệt chuyển hướng
@@ -32,7 +27,7 @@ const Edit = () => {
             return;
         }
         try {
-            const {data} = await axios.put(`http://localhost:3000/books/${id}`,books)
+            const data = await bookservice.Put(books,id)
             alert("Cập nhật thành công")
             navigate('/books')
         } catch (error) {

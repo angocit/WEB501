@@ -1,10 +1,12 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import CRUD from './services/crud'
 
 const Login = () => {
   const [user,setUser] = useState({})
     // const navigate = useNavigate()
+    const userservice = new CRUD('login')
     const onSubmit = async (e)=>{
         e.preventDefault() // Ngăn trình duyệt chuyển hướng
         // console.log(books); 
@@ -19,10 +21,8 @@ const Login = () => {
             return;
         }
         try {
-            const {data} = await axios.post(`http://localhost:3000/login`,user)
-            // // console.log(response);            
-            // navigate('/login')
-            // console.log(data);            
+            const data = await userservice.Post(user)   
+            // console.log(data);                
             localStorage.setItem('token',data.accessToken)
             alert("Đăng nhập thành công")
         } catch (error) {

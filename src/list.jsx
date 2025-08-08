@@ -1,24 +1,17 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import CRUD from './services/crud'
 
 const List = () => {
     const [books,setBook] = useState([])
+    const bookservice = new CRUD('books')
     useEffect(()=>{
-        const getAllBooks = async()=>{
-            try {
-                const {data} = await axios.get(`http://localhost:3000/books`)
-                setBook(data)
-            } catch (error) {
-                console.log(error);                
-            }
-        }
-        getAllBooks()
+        bookservice.getAll(setBook)
     },[])
     const onDelete = async(id)=>{
         try {
             if (confirm("Bạn chắc chứ?")){
-                const {data} = axios.delete(`http://localhost:3000/books/${id}`)
-
+              bookservice.Delete(id)
             }
         } catch (error) {
             console.log(error);

@@ -1,10 +1,12 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import CRUD from './services/crud'
 
 const Register = () => {
     const [user,setUser] = useState({})
     const navigate = useNavigate()
+    const userservice = new CRUD('register')
     const onSubmit = async (e)=>{
         e.preventDefault() // Ngăn trình duyệt chuyển hướng
         // console.log(books); 
@@ -19,8 +21,7 @@ const Register = () => {
             return;
         }
         try {
-            const {data} = await axios.post(`http://localhost:3000/register`,user)
-            // console.log(response);            
+           await userservice.Post(user)   
             navigate('/login')
             alert("Đăng ký thành công")
         } catch (error) {

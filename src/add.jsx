@@ -1,10 +1,12 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import CRUD from './services/crud'
 
 const Add = () => {
     const [books,setBook] = useState({})
     const navigate = useNavigate()
+    const bookservice = new CRUD('books')
     const onSubmit = async (e)=>{
         e.preventDefault() // Ngăn trình duyệt chuyển hướng
         // console.log(books); 
@@ -19,7 +21,7 @@ const Add = () => {
             return;
         }
         try {
-            const {data} = await axios.post(`http://localhost:3000/books`,books)
+            bookservice.Post(books)
             navigate('/books')
             alert("Thêm mới thành công")
         } catch (error) {
